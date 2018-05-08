@@ -1,0 +1,130 @@
+@import "compass";
+
+
+$fontcolor: #0f0f0f;
+$maincolor: #FAFAF6;
+$subcolor: #CAE3B5;
+$keycolor: #E6B324;
+
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: '游ゴシック', YuGothic, 'メイリオ', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    letter-spacing: 0.1rem;
+    color: $fontcolor;
+    background-color: $maincolor;
+}
+
+/* 中央レイアウト-----*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.header-images{
+    background-image: url(./mainpic_1.jpg);
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+h1{
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 50px 0;
+}
+
+#maincontents{
+    .container{
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(column);
+        margin: 0 10px 30px 10px;
+    }
+    h2{
+        color: $keycolor;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0.4rem;
+    }
+    .box{
+        @include flex(1);
+        margin: 10PX 0;
+        padding: 20px;
+    }
+}
+
+
+#footerbtn{
+    background-color: $subcolor;
+    padding: 30px 0;
+    
+     h3{
+        text-align:center;
+        margin-bottom: 20px;
+    }
+    
+    a{
+        display:block;
+        position: relative;
+        text-decoration: none;
+        
+        
+        .btn-nextpage {
+            margin: auto;
+            text-align: center;
+            padding: 5px 0;
+            width: 200px;
+            display: block;
+            color: #fff;
+            font-weight:bold;
+            background-color: $keycolor;
+            @include border-radius;
+            font-size: 1.5rem;
+            letter-spacing: 0.4rem;
+            
+        }
+    }
+}
+
+
+
+/* desktop---------*/
+@media (min-width: 769px) {
+
+/* main---*/
+    #maincontents{
+    .container {
+      @include flex-direction(row);
+      justify-content: space-between;
+      margin: 0 40px 30px 40px;
+        }
+        .box{
+            margin: 0 10px;
+        }
+    }
+
+
+/* button---*/
+    #footerbtn {
+        padding: 60px 0;
+        a{
+            .btn-nextpage {
+                &:hover {
+                 background-color: darken($keycolor, 5%);
+                }
+            }
+        }
+    }
+}
