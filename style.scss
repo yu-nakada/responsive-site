@@ -31,7 +31,7 @@ body{
 
 .header-images{
     background-image: url(./mainpic_1.jpg);
-    height: 500px;
+    height: 250px;
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -102,6 +102,10 @@ h1{
 
 /* desktop---------*/
 @media (min-width: 769px) {
+    .header-images{
+    height: 500px;
+}
+    
 
 /* main---*/
     #maincontents{
